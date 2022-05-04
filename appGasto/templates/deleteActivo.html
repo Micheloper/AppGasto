@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Delete Cash
+{% endblock %}
+
+
+{% block content %}
+<div class="container containerVidrio">
+    <h3 class="text-center">¿ Estás seguro de que borrar {{activo.importe_Total}} Pesos ?</h3> <hr>
+    <div class="row mx-auto">
+        <div class="col-md-6 offset-4">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-danger" type="submit" value="Delete Activo">
+                <a  class="btn btn-info" href="{% url 'home' %}">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

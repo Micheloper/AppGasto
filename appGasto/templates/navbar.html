@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="{% url 'home' %}">Tus Gastos</a>
+  <button
+    class="navbar-toggler d-lg-none"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li> -->
+      {% if request.user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link text-light" href="{% url 'agregarPresupuesto' %}"
+          >Agregar Presupuesto</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="{% url 'agregarGastos' %}"
+          >Agregar Gastos</a
+        >
+      </li>
+      {% endif %}
+    </ul>
+    <ul class="navbar-nav justify-content-center flex-grow pe-3">
+      {% if request.user.is_authenticated %}
+      
+      <li class="nav-item active list-group-item-info">
+        <a style="color: black"  class="nav-link" href="{% url 'home' %}"
+          >{{ user.username | upper}} <span class="sr-only">(current)</span></a
+        >
+      </li>
+      
+      <li  class="nav-item list-group-item-danger ">
+        <a class="nav-link text-light" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"
+          >Login <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="{% url 'signup' %}">Register</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

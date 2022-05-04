@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+      <h3 class="text-center text-success">Presupuesto Total</h3>
+      <div class="row">          
+        {% for activo in activos %}
+        <a class="btn col bg-danger m-2 p-2 text-light font-weight-bold" href="{% url 'deleteActivo' activo.id %}">{{ activo.proposito}} 🡆 {{ activo.importe_Total}} (ARS) <i class='fas fa-trash-alt text-warning'></i></a>
+        {% endfor %}
+      </div>
+    </div>
+  <div class="container">
+    <h3 class="text-center text-success mt-4">Lista de Gastos</h3>
+    <table class="table">
+        <thead class=" table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Proposito</th>
+                <th>Descripción</th>
+                <th>Costo</th>
+                <th>Editar/Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key,value in ailables.items %}
+        
+                {% for cost in costs %}
+                
+                    {% if cost.activo.id == key %}
+
+                        <tr>
+                            <td scope="row">{{forloop.counter}}</td>
+                            <td scope="row">{{cost.activo.proposito}}</td>
+                            <td scope="row">{{cost.descripcion}}</td>
+                            <td scope="row">{{cost.importe}}</td>
+                            <td scope="row"> 
+                                <a class="btnI" href="{% url 'editarGasto' cost.id %}"><i class='fas fa-edit'></i></a>
+                                <a class="btnI" href="{% url 'deletecost' cost.id %}"><i class='fas fa-trash-alt'></i></a>
+                            </td>
+                        </tr>
+
+                        {% endif %}
+                {% endfor %}
+
+                
+                    <tr>
+                        <td class="text-right table-success  font-weight-bold tdColor" scope="row" colspan="5" >{{ proposito }}  Pesos Disponible 🡆 {{value}}</td>
+                    </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+        
+    </table>
+  </div>
+  
+    
+{% endblock %}

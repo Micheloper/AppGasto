@@ -1,0 +1,43 @@
+.bodyC {
+  background-color: black;
+}
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+   
+  margin-bottom: 0;
+  list-style: none;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+td {
+  color: aliceblue;
+}
+.btnI {
+  color: aliceblue;
+  margin-left: 20px;
+}
+.tdColor {
+  color: #000;
+}
+.containerVidrio {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 3rem;
+  margin-top: 10rem;
+}
