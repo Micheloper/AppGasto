@@ -1,6 +1,6 @@
 # 🎨 Layout
-<!-- 
-<img alt="Dimension Keycaps" title="#Dimension Keycaps" src="./src/assets/Dimension Key Caps - GIF.gif" /> -->
+ 
+<img alt="Dimension Keycaps" title="#Dimension Keycaps" src="https://github.com/N-S-LEHCIM/AppGasto/blob/main/appGasto/gif-python.gif" />  
 
 # 💻 Sobre o projeto
 
